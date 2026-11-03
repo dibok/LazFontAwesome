@@ -1,0 +1,234 @@
+object Form1: TForm1
+  Left = 407
+  Height = 748
+  Top = 30
+  Width = 1045
+  Caption = 'LazFontAwesome demo browser'
+  ClientHeight = 748
+  ClientWidth = 1045
+  LCLVersion = '4.8.0.0'
+  OnShow = FormShow
+  object ListView1: TListView
+    Left = 10
+    Height = 182
+    Top = 52
+    Width = 1025
+    Align = alTop
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 10
+    BorderSpacing.Right = 10
+    Columns = <>
+    IconOptions.AutoArrange = True
+    IconOptions.WrapText = False
+    LargeImages = ImageList1
+    ShowColumnHeaders = False
+    SmallImages = ImageList1
+    TabOrder = 0
+    ViewStyle = vsIcon
+    OnSelectItem = ListView1SelectItem
+  end
+  object Splitter1: TSplitter
+    Cursor = crVSplit
+    Left = 0
+    Height = 10
+    Top = 234
+    Width = 1045
+    Align = alTop
+    ResizeAnchor = akTop
+  end
+  object GroupBox1: TGroupBox
+    Left = 10
+    Height = 151
+    Top = 244
+    Width = 1025
+    Align = alTop
+    BorderSpacing.Left = 10
+    BorderSpacing.Right = 10
+    Caption = 'TBitBtn + TImageList'
+    ChildSizing.EnlargeHorizontal = crsHomogenousSpaceResize
+    ChildSizing.EnlargeVertical = crsHomogenousSpaceResize
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 4
+    ClientHeight = 122
+    ClientWidth = 1021
+    TabOrder = 2
+    object BitBtn1: TBitBtn
+      Left = 86
+      Height = 29
+      Top = 47
+      Width = 60
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Caption = 'BitBtn1'
+      Images = ImageList1
+      TabOrder = 3
+    end
+    object BitBtn2: TBitBtn
+      Left = 231
+      Height = 48
+      Top = 37
+      Width = 108
+      AutoSize = True
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Caption = 'BitBtn2'
+      Font.Height = -27
+      Images = ImageList1
+      ParentFont = False
+      TabOrder = 2
+    end
+    object BitBtn3: TBitBtn
+      Left = 425
+      Height = 75
+      Top = 24
+      Width = 178
+      AutoSize = True
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Caption = 'BitBtn3'
+      Font.Height = -47
+      Images = ImageList1
+      ParentFont = False
+      TabOrder = 1
+    end
+    object BitBtn4: TBitBtn
+      Left = 688
+      Height = 103
+      Top = 10
+      Width = 247
+      AutoSize = True
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Caption = 'BitBtn4'
+      Font.Height = -67
+      Images = ImageList1
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 10
+    Height = 110
+    Top = 405
+    Width = 1025
+    Align = alTop
+    BorderSpacing.Around = 10
+    Caption = 'TSpeedButton + Glyph'
+    ChildSizing.EnlargeHorizontal = crsHomogenousSpaceResize
+    ChildSizing.EnlargeVertical = crsHomogenousSpaceResize
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 4
+    ClientHeight = 81
+    ClientWidth = 1021
+    TabOrder = 3
+    object SpeedButton1: TSpeedButton
+      Left = 172
+      Height = 25
+      Top = 28
+      Width = 25
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Constraints.MinHeight = 25
+      Constraints.MinWidth = 25
+    end
+    object SpeedButton2: TSpeedButton
+      Left = 369
+      Height = 35
+      Top = 23
+      Width = 35
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Constraints.MinHeight = 35
+      Constraints.MinWidth = 35
+    end
+    object SpeedButton3: TSpeedButton
+      Left = 577
+      Height = 45
+      Top = 18
+      Width = 45
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Constraints.MinHeight = 45
+      Constraints.MinWidth = 45
+    end
+    object SpeedButton4: TSpeedButton
+      Left = 794
+      Height = 55
+      Top = 13
+      Width = 55
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Constraints.MinHeight = 55
+      Constraints.MinWidth = 55
+      ParentFont = False
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 10
+    Height = 213
+    Top = 525
+    Width = 1025
+    Align = alClient
+    BorderSpacing.Around = 10
+    Caption = 'TPaintBox + canvas draw'
+    ClientHeight = 184
+    ClientWidth = 1021
+    TabOrder = 4
+    object cbDrawBounds: TCheckBox
+      Left = 0
+      Height = 22
+      Top = 0
+      Width = 1021
+      Align = alTop
+      Caption = 'Draw bounds'
+      Checked = True
+      State = cbChecked
+      TabOrder = 0
+      OnChange = cbDrawBoundsChange
+    end
+    object Panel1: TPanel
+      Left = 0
+      Height = 162
+      Top = 22
+      Width = 1021
+      Align = alClient
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsSameSize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 162
+      ClientWidth = 1021
+      TabOrder = 1
+      object PaintBox1: TPaintBox
+        Left = 5
+        Height = 152
+        Top = 5
+        Width = 503
+        BorderSpacing.Around = 5
+        OnPaint = PaintBox1Paint
+      end
+      object PaintBox2: TPaintBox
+        Left = 513
+        Height = 152
+        Top = 5
+        Width = 503
+        BorderSpacing.Around = 5
+        OnPaint = PaintBox2Paint
+      end
+    end
+  end
+  object ColorBox1: TColorBox
+    Left = 10
+    Height = 32
+    Top = 10
+    Width = 1025
+    DefaultColorColor = clBtnText
+    Selected = clBtnText
+    Align = alTop
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 10
+    BorderSpacing.Right = 10
+    ItemHeight = 20
+    TabOrder = 5
+    OnChange = ColorBox1Change
+  end
+  object ImageList1: TImageList
+    Height = 24
+    Width = 24
+    Left = 446
+    Top = 422
+  end
+end

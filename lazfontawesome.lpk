@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <Name Value="lazfontawesome"/>
+    <Type Value="RunTimeOnly"/>
+    <Author Value="Dibo"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <SearchPaths>
+        <IncludeFiles Value="src"/>
+        <OtherUnitFiles Value="src"/>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)/$(LCLWidgetType)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Description Value="Font Awesome Free 7.3.1 icons rendered to TBitmap. Fonts embedded as resources (TrueType, via LazFreeType - no external libraries)."/>
+    <License Value="Code: Modified LGPL. Icons: CC BY 4.0. Fonts: SIL OFL 1.1 (see fonts/)."/>
+    <Version Major="7" Minor="3" Release="1"/>
+    <Files>
+      <Item>
+        <Filename Value="src/fontawesomeicons.pas"/>
+        <UnitName Value="FontAwesomeIcons"/>
+      </Item>
+      <Item>
+        <Filename Value="src/fontawesomeregularres.pas"/>
+        <UnitName Value="FontAwesomeRegularRes"/>
+      </Item>
+      <Item>
+        <Filename Value="src/fontawesomebrandsres.pas"/>
+        <UnitName Value="FontAwesomeBrandsRes"/>
+      </Item>
+    </Files>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="LCL"/>
+      </Item>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

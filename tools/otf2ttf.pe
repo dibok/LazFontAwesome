@@ -1,0 +1,21 @@
+# FontForge script: OTF (CFF) -> TTF (TrueType outlines) + rename.
+# Usage:
+#   fontforge -lang=ff -script otf2ttf.pe <in.otf> <out.ttf> <PostScriptName> "<Family>" "<Full name>"
+#
+# Font Awesome Free fonts are licensed under SIL OFL 1.1 with Reserved Font
+# Name "Font Awesome". Converting CFF to TrueType changes the outlines
+# (cubic -> quadratic curves), so the result is a Modified Version and must
+# not be named "Font Awesome". Copyright (name ID 0) and license (ID 13/14)
+# entries are kept untouched; all name entries are replaced.
+Open($1)
+SetFontNames($3, $4, $5, "Regular")
+# 'name' table entries imported from the OTF would otherwise survive
+SetTTFName(0x409, 1, $4)
+SetTTFName(0x409, 2, "Regular")
+SetTTFName(0x409, 3, $3 + " (converted from Font Awesome Free OTF)")
+SetTTFName(0x409, 4, $5)
+SetTTFName(0x409, 6, $3)
+SetTTFName(0x409, 16, "")
+SetTTFName(0x409, 17, "")
+Generate($2)
+Close()
