@@ -3,6 +3,8 @@
 **[Font Awesome Free](https://fontawesome.com) 7.3.1 icons for Lazarus.** Render any of the 2163 free icons into a `TBitmap` (32-bit with alpha) at any size and color, and put them into your own `TImageList`, `TImage`, buttons or menus.
 
 - **Pure Lazarus.** Rendering uses only LCL classes and LazFreeType, which ships with Lazarus. There is no `libfreetype`, no DLL or `.so`, and no other external library.
+- **All widgetsets.** Works on Qt (KDE), GTK (GNOME) and Windows.
+- **Colors.** By default it is using system color (`clBtnText`) to adaptive for light and dark theme. But you can use whatever color you want.
 - **Single executable.** The Free fonts are compiled into the program as resources, so there are no font files to deploy next to your `.exe`. Only the style you use is linked: Solid is included by default, and Regular and Brands are added by putting one unit in your `uses` clause.
 - **Typed icon names.** Every icon is an enum value named after its Font Awesome name: `folder-open` is `fas_folder_open`. You get code completion and compile-time checking, and no Unicode code points to look up.
 - **Sharp at every size.** Icons are rendered from vector outlines, so 16, 24, 32 or 256 px are all crisp, which also suits HiDPI and multi-resolution `TImageList`s.
@@ -14,12 +16,28 @@
 
 ## Gallery
 
+Screenshots from `/test/fademo.lpr`
+
+| Windows | KDE (Qt) | GNOME (Gtk) |
+| :------: | :------: | :----------: |
+| <a href="test/screen_windows_org.png"><img src="test/screen_windows_org.png" alt="Screen Windows" width="50%"></a> | <a href="test/screen_qt_org.png"><img src="test/screen_qt_org.png" alt="Screen KDE (Qt)" width="50%"></a>  |  <a href="test/screen_gtk_org.png"><img src="test/screen_gtk_org.png" alt="Screen GNOME (Gtk)" width="50%"></a>  |
+| <a href="test/screen_windows_org.png">(click to enlarge)</a>  | <a href="test/screen_qt_org.png">(click to enlarge)</a>  | <a href="test/screen_gtk_org.png">(click to enlarge)</a>  |
+
+## Version
+FontAwesome 7.3.1
+
 <!-- screenshots -->
+
+## Environment
+Tested with Lazarus 4.8 and FPC 3.2.2. Platforms: CachyOS (KDE), Linux Mint (GNOME) and Windows 10
 
 ## Installation
 
-Tested with Lazarus 4.8 and FPC 3.2.2. The package only needs the `LCL` package, which every Lazarus installation has.
+The package only needs the `LCL` package, which every Lazarus installation has.
 
+You can download and install package using Lazarus `Online Package Manager` from `Package->` Menu. Package may not be published yet while you are reading it.
+
+Manual installation:
 1. Download or clone this repository.
 2. In Lazarus choose **Package → Open Package File (.lpk)…** and open `lazfontawesome.lpk`.
 3. In the package window click **Compile**.
@@ -259,7 +277,7 @@ The repository contains everything needed to move to a newer Font Awesome releas
    fpc tools/lazfagen.lpr
    tools/lazfagen icon-families.json fonts src X.Y.Z
    ```
-4. Run the tests in `test/`:
+4. Run the tests in `test/technical`:
    - `fademo` checks that every enum value has a glyph in the font.
    - `cliptest` renders every icon at 12–64 px and fails if any icon is clipped.
 
